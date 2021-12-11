@@ -1,0 +1,17 @@
+mat-card {
+  max-width: 800px;
+  margin: 10px auto;
+}
+
+.image-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+img[mat-card-image] {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  margin: auto;
+}

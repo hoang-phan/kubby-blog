@@ -1,0 +1,31 @@
+<section>
+  <mat-accordion class="example-headers-align">
+    <mat-expansion-panel [expanded]="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <span *ngIf="!id">Write a new Post</span>
+          <span *ngIf="id">Edit Post</span>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <div>
+        <input type="file" name="file" id="file" (change)="uploadImage($event)">
+        <div [hidden]="!uploadPercent">
+          <mat-progress-bar mode="determinate" value={{uploadPercent}}></mat-progress-bar>
+        </div>
+        <div [hidden]="!image">
+          <img [src]="image || '//:0'">
+        </div>
+      </div>
+      <mat-form-field>
+        <input type="text" matInput placeholder="Post Title" [(ngModel)]="title">
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <textarea matInput placeholder="Content" [(ngModel)]="content" rows="10"></textarea>
+      </mat-form-field>
+      <br>
+      <button mat-raised-button color="accent" (click)="submitPost()" [disabled]="!title || !content || !image">{{buttonText}}</button>
+    </mat-expansion-panel>
+  </mat-accordion>  
+</section>

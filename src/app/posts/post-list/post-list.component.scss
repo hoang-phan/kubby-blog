@@ -1,0 +1,41 @@
+section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-auto-rows: auto;
+  grid-gap: 10px;
+  margin: 0 auto;
+  max-width: 95%;
+}
+
+mat-card {
+  margin: 10px 0;
+  max-width: 400px;
+
+  mat-card-title {
+    height: 41px;
+    overflow: hidden;
+    margin-bottom: 12px;
+  }
+
+  mat-card-content p{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 100px;
+  }
+}
+
+.image-wrapper {
+  width: calc(100% + 30px);
+  margin-left: -15px;
+  display: flex;
+  align-items: center;
+  height: 300px;
+  overflow: hidden;
+}
+
+img[mat-card-image] {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  margin: auto;
+}

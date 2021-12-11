@@ -1,0 +1,18 @@
+<section>
+  <mat-card *ngFor="let post of posts" routerLink="{{post.id}}">
+    <mat-card-header>
+      <mat-card-title>{{post.title}}</mat-card-title>
+    </mat-card-header>
+    <div class="image-wrapper">
+      <img mat-card-image src="{{post.image}}" alt="{{post.title}}">
+    </div>
+    <mat-card-actions align="end" *ngIf="auth.currentUser?.uid == post.authorId">
+      <button mat-icon-button routerLink="{{post.id}}/edit">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button (click)="delete(post.id)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</section>

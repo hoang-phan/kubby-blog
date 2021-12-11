@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "kubbyblog": {
+      "hosting": {
+        "kubby-blog": [
+          "kubbyblog"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "kubbyblog"
+  }
+}

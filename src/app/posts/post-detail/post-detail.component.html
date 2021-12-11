@@ -1,0 +1,21 @@
+<section *ngIf="post">
+  <mat-card>
+    <mat-card-header>      
+      <mat-card-title>{{post.title}}</mat-card-title>
+      <mat-card-subtitle>Posted by {{post.author}} on {{post.published.toDate() | date:'fullDate'}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        {{post.content}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions align="end" *ngIf="auth.currentUser?.uid == post.authorId">
+      <button mat-icon-button routerLink="edit">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button (click)="delete()">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</section>
