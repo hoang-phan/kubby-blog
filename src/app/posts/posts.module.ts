@@ -6,7 +6,7 @@ import { PostDetailComponent } from './post-detail/post-detail.component';
 import { PostListComponent } from './post-list/post-list.component';
 import { PostService } from './post.service';
 import { SharedModule } from '../shared/shared.module';
-
+import { SafeHtmlPipe } from '../safe-html.pipe';
 
 const routes: Routes = [
   { path: 'blog', component: PostListComponent },
@@ -19,7 +19,8 @@ const routes: Routes = [
   declarations: [
     PostDashboardComponent,
     PostDetailComponent,
-    PostListComponent
+    PostListComponent,
+    SafeHtmlPipe
   ],
   imports: [
     SharedModule,

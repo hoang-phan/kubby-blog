@@ -21,9 +21,23 @@
         <input type="text" matInput placeholder="Post Title" [(ngModel)]="title">
       </mat-form-field>
       <br>
-      <mat-form-field>
-        <textarea matInput placeholder="Content" [(ngModel)]="content" rows="10"></textarea>
-      </mat-form-field>
+      <editor
+       [(ngModel)]="content"
+       apiKey="7hu8ewau44pzblmiyzpb0rskrpkp38pbidgsufihcy6vs9y1"
+       [init]="{
+         height: 500,
+         statusbar: false,
+         plugins: [
+           'advlist autolink lists link image charmap print preview anchor',
+           'searchreplace visualblocks code fullscreen',
+           'insertdatetime media table paste code help wordcount'
+         ],
+         toolbar:
+           'undo redo | formatselect | bold italic backcolor | \
+           alignleft aligncenter alignright alignjustify | \
+           bullist numlist outdent indent | removeformat | help'
+       }"
+     ></editor>
       <br>
       <button mat-raised-button color="accent" (click)="submitPost()" [disabled]="!title || !content || !image">{{buttonText}}</button>
     </mat-expansion-panel>
