@@ -11,12 +11,18 @@ import { AuthService } from '../../core/auth.service';
 })
 export class PostListComponent implements OnInit {
   postsSubscription?: Subscription;
+  highlight1Posts?: Post[];
+  highlight2Posts?: Post[];
   posts?: Post[];
 
   constructor(private postService: PostService, public auth: AuthService) { }
 
   ngOnInit(): void {
-    this.postsSubscription = this.postService.getPosts().subscribe(posts => { this.posts = posts });
+    this.postsSubscription = this.postService.getPosts().subscribe(posts => {
+      this.highlight1Posts = posts.filter((post) => post.highlightLevel == 1)
+      this.highlight2Posts = posts.filter((post) => post.highlightLevel == 2)
+      this.posts = posts.filter((post) => !post.highlightLevel);
+    });
   }
 
   ngOnDestroy(): void {

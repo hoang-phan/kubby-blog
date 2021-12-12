@@ -1,13 +1,24 @@
 <mat-toolbar color="primary">
-  <mat-toolbar-row>
-    <span routerLink="/">Kubby Blog</span>
-    <span class="spacer"></span>
+  <mat-toolbar-row class="justify-right">
+    <span class="app-title" routerLink="/">Kubby</span>
     <div *ngIf="auth.currentUser; else showLogin">
       <button mat-raised-button color="accent" routerLink="/dashboard">Write a post</button>
-      <button mat-button (click)="auth.logout()">Log out</button>
+      <button mat-button (click)="auth.logout()">
+        <mat-icon>logout</mat-icon>
+      </button>
     </div>
     <ng-template #showLogin>
-      <button mat-button (click)="auth.login()">Log in with Google</button>
+      <button mat-button (click)="auth.login()">
+        <mat-icon>person</mat-icon>
+      </button>
     </ng-template>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-toolbar color="primary">
+  <mat-toolbar-row class="flex justify-center">
+    <span routerLink="/" class="subnav-item">Hot</span>
+    <span routerLink="/" class="subnav-item">Mo khoet</span>
+    <span routerLink="/" class="subnav-item">Du lich</span>
+    <span routerLink="/" class="subnav-item">Vao bep</span>
   </mat-toolbar-row>
 </mat-toolbar>

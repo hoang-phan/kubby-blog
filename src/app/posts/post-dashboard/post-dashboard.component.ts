@@ -16,6 +16,7 @@ export class PostDashboardComponent implements OnInit {
   id: string = '';
   title?: string;
   image?: string = '';
+  highlightLevel?: number = 0;
   content?: string;
   buttonText: String = 'Submit';
   uploadPercent: number = 0;
@@ -37,6 +38,7 @@ export class PostDashboardComponent implements OnInit {
         this.title = data?.title;
         this.content = data?.content;
         this.image = data?.image;
+        this.highlightLevel = data?.highlightLevel;
       });
     }
   }
@@ -48,6 +50,7 @@ export class PostDashboardComponent implements OnInit {
       title: this.title,
       content: this.content,
       image: this.image,
+      highlightLevel: this.highlightLevel,
       published: new Date()
     }
     if (this.id) {

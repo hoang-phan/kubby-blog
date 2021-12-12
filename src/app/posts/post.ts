@@ -6,4 +6,5 @@ export class Post {
   authorId?: string
   image?: string
   published?: any
+  highlightLevel?: number
 }

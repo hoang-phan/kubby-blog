@@ -1,4 +1,45 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.background-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: url('/assets/background.jpeg');
+  opacity: 0.1;
+}
+
+@font-face {
+  font-family: Bubblegum;
+  src: url("/assets/Bubblegum.ttf") format("truetype");
+}
+
+.mat-card-header-text {
+  width: 100%;;
+}
+
+.mat-card-title {
+  margin-bottom: 0 !important;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.subnav-item {
+  padding: 0 20px;
+}
+
+.justify-right {
+  justify-content: right;
+}

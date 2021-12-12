@@ -38,6 +38,10 @@
            bullist numlist outdent indent | removeformat | help'
        }"
      ></editor>
+     <br>
+     <mat-form-field>
+        <input type="number" matInput placeholder="Highlight level" [(ngModel)]="highlightLevel">
+      </mat-form-field>
       <br>
       <button mat-raised-button color="accent" (click)="submitPost()" [disabled]="!title || !content || !image">{{buttonText}}</button>
     </mat-expansion-panel>

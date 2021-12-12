@@ -9,4 +9,24 @@ span {
     outline: none;
     border: 0;
   }
+
+  &.app-title {
+    font-family: Bubblegum;
+    font-size: 50px;
+    letter-spacing: 5px;
+    width: 100%;
+    height: 100%;
+    line-height: 68px;
+    text-align: center;
+    left: 0;
+    top: 0;
+    position: absolute;
+  }
+}
+
+mat-toolbar.mat-primary {
+  background: none;
+  color: #673ab7;
+  justify-content: right;
+  position: relative;
 }
